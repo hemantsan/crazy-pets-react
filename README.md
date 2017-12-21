@@ -5,19 +5,19 @@
 
 This project is based on create-react-app package which is available in npm. So first of all you must have NodeJs installed on your system. to install NodeJS go to [NodeJS website](https://nodejs.org/en/)
 
-- Installing create-react-app globally : npm install -g create-react-app
+- Installing create-react-app globally : `npm install -g create-react-app`
 
 -g flag installs a package globally means you can use this package from any directory on your system.
 
 Now go to a directory and open up git bash/cmd/terminal (Linux or MacOS) and fire below command
 
-- Creating project : create-react-app <project-name>
+- Creating project : `create-react-app your-project-name`
 
 this command will create a folder and install all required dependancies for react app. And if needed you can install more later using `npm`.
 Now enter in newly created directory
 
-- cd <project-name>
-- npm start
+- `cd `your-project-name`
+- `npm start`
 
 Now you can see your app running in browser at the default address http://localhost:3000/
 
