@@ -16,7 +16,7 @@ Now go to a directory and open up git bash/cmd/terminal (Linux or MacOS) and fir
 this command will create a folder and install all required dependancies for react app. And if needed you can install more later using `npm`.
 Now enter in newly created directory
 
-- `cd `your-project-name`
+- `cd your-project-name`
 - `npm start`
 
 Now you can see your app running in browser at the default address http://localhost:3000/
