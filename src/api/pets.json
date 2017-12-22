@@ -1,0 +1,41 @@
+[{
+        "id": "01",
+        "name": "JooJoo",
+        "gender": "Female",
+        "age": "1yr",
+        "price": "2,500",
+        "picture": "01.jpg"
+    },
+    {
+        "id": "02",
+        "name": "Koba",
+        "gender": "Male",
+        "age": "1.5yr",
+        "price": "3,500",
+        "picture": "02.jpg"
+    },
+    {
+        "id": "03",
+        "name": "Git-Hub",
+        "gender": "Male",
+        "age": "2yr",
+        "price": "4,500",
+        "picture": "03.jpg"
+    },
+    {
+        "id": "04",
+        "name": "Drogon",
+        "gender": "Male",
+        "age": "3yr",
+        "price": "7,500",
+        "picture": "04.jpg"
+    },
+    {
+        "id": "05",
+        "name": "Layla",
+        "gender": "Female",
+        "age": "0.5yr",
+        "price": "8,500",
+        "picture": "05.jpg"
+    }
+]

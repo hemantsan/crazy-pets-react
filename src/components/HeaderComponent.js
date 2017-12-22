@@ -21,7 +21,7 @@ class HeaderComponent extends Component {
                             <NavLink className="nav-link" to={"/pets"}>Pets</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link" to="/cart">Cart</NavLink>
+                            <NavLink className="nav-link" to="/cart">Cart <i className="fa fa-fa-shopping-cart"></i></NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink className="nav-link" to={"/wishlist"}>Wishlist</NavLink>
