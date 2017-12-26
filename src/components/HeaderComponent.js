@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { NavLink } from 'react-router-dom';
-import SiteCSS from '../css/site.scss';
 
 class HeaderComponent extends Component {
     render() {
@@ -15,16 +14,16 @@ class HeaderComponent extends Component {
                 <div className="collapse navbar-collapse" id="navbarCollapse">
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item">
-                            <NavLink className="nav-link" to={"/home"}>Home <span className="sr-only">(current)</span></NavLink>
+                            <NavLink className="nav-link" to={"/home"}>Home</NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink className="nav-link" to={"/pets"}>Pets</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link" to="/cart">Cart <i className="fa fa-fa-shopping-cart"></i></NavLink>
+                            <NavLink className="nav-link" to="/cart">Cart <span className="badge badge-pill badge-primary">{this.props.cartItems}</span></NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link" to={"/wishlist"}>Wishlist</NavLink>
+                            <NavLink className="nav-link" to={"/wishlist"}>Wishlist <span className="badge badge-pill badge-primary">{this.props.wishlistItems}</span></NavLink>
                         </li>
                     </ul>
                 </div>

@@ -54,3 +54,31 @@ Now install below packages for better react, jsx, JS ES6 support
 2. JavaScript (ES6)
 3. Reactjs code snippets
 4. vscode-styled-jsx
+
+### Building App
+
+1. Create a folder `api` in src
+2. In `components` folder create below files
+    * CartComponent.js
+    * HeaderComponent.js
+    * HomeComponent.js
+    * MainComponent.js
+    * PetComponent.js
+    * PetsListComponent.js
+    * WishlistComponent.js
+
+3. import `css/site.css` in index.js
+
+4. Edit `PetComponent.js`, in there we will put code related to the Pet card.
+
+4. Edit `PetsListComponent.js`, in there we will put code which imports data from api/data.json and iterate array with PetComponent.
+
+5. In `HomeComponent` now import `PetsListComponent` and run `npm start`.
+
+6. Now we can see pet cards in home page.
+
+7. Run `npm install react-router-dom`
+
+8. Import `react-router-dom` in `index.js` 
+    * `import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'`
+

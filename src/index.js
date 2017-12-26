@@ -7,17 +7,26 @@ import HomeComponent from './components/HomeComponent';
 import PetsListComponent from './components/PetsListComponent';
 import CartComponent from './components/CartComponent';
 import WishlistComponent from './components/WishlistComponent';
+import BrowsePetsComponent from './components/BrowsePetsComponent';
 import registerServiceWorker from './registerServiceWorker';
 
+import './css/site.css';
+
 class App extends Component {
+
+    constructor() {
+        super();
+    }
     render() {
         return (
             <Router>
                 <MainComponent>
                     <Switch>
-                        <Route exact path="/" component={HomeComponent}/>
+                        <Route exact path="/" render={(props) => (
+                            <HomeComponent />
+                        )}/>
                         <Route exact path="/home" component={HomeComponent}/>
-                        <Route exact path="/pets" component={PetsListComponent}/>
+                        <Route exact path="/pets" component={BrowsePetsComponent}/>
                         <Route exact path="/cart" component={CartComponent}/>
                         <Route path="/wishlist" component={WishlistComponent}/>
                     </Switch>

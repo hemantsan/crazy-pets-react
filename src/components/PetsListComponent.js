@@ -4,24 +4,34 @@ import PetComponent from './PetComponent';
 
 class PetsListComponent extends Component {
 
-    constructor() {
+    constructor(props) {
         super();
-        const petsJsonData = petsData;
+        this.state = {
+            petDataCount: (props.dataCount === "all" ? Object.keys(petsData).length : props.dataCount)
+        }
+    }
+
+    handleBuyClick(petId) {
+        alert("Pet id : " + petId);
     }
 
     makeList() {
         var petListHtml = '';
-        petListHtml = petsData.map(pet => {
-            return(
-                <PetComponent 
-                    key={pet.id}
-                    name={pet.name}
-                    gender={pet.gender}
-                    age={pet.age}
-                    price={pet.price}
-                    picture={pet.picture}
-                />
-            );
+        petListHtml = petsData.map((pet, index) => {            
+            if (this.state.petDataCount > index) {
+                return(
+                    <PetComponent 
+                        id={pet.id}
+                        key={pet.id}
+                        name={pet.name}
+                        gender={pet.gender}
+                        age={pet.age}
+                        price={pet.price}
+                        picture={pet.picture}
+                        handleBuyClick={this.handleBuyClick}
+                    />
+                );
+            }
         });
         return petListHtml;
     }

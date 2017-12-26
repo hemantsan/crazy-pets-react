@@ -1,34 +1,37 @@
 {
-    "name": "crazy-pets-react-app",
-    "version": "1.0.0",
-    "private": true,
-    "dependencies": {
-        "react": "^16.2.0",
-        "react-dom": "^16.2.0",
-        "react-router-dom": "^4.2.2",
-        "react-scripts": "1.0.17"
-    },
-    "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "test": "react-scripts test --env=jsdom",
-        "eject": "react-scripts eject"
-    },
-    "description": "crazy-pets-react",
-    "main": "index.js",
-    "devDependencies": {},
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/vieckys/crazy-pets-react.git"
-    },
-    "keywords": [
-        "reactjs",
-        "react-basic-app"
-    ],
-    "author": "Hemant Sankhla",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/vieckys/crazy-pets-react/issues"
-    },
-    "homepage": "https://github.com/vieckys/crazy-pets-react#readme"
+  "name": "crazy-pets-react-app",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.0.17"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "description": "crazy-pets-react",
+  "main": "index.js",
+  "devDependencies": {
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vieckys/crazy-pets-react.git"
+  },
+  "keywords": [
+    "reactjs",
+    "react-basic-app"
+  ],
+  "author": "Hemant Sankhla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vieckys/crazy-pets-react/issues"
+  },
+  "homepage": "https://github.com/vieckys/crazy-pets-react#readme"
 }

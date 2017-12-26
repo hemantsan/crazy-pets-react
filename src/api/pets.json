@@ -37,5 +37,45 @@
         "age": "0.5yr",
         "price": "8,500",
         "picture": "05.jpg"
+    },
+    {
+        "id": "06",
+        "name": "Visage",
+        "gender": "Male",
+        "age": "100yr",
+        "price": "1,000",
+        "picture": "06.jpg"
+    },
+    {
+        "id": "07",
+        "name": "DK",
+        "gender": "Male",
+        "age": "2.5yr",
+        "price": "2,800",
+        "picture": "07.jpg"
+    },
+    {
+        "id": "08",
+        "name": "Luna",
+        "gender": "Female",
+        "age": "1.5yr",
+        "price": "10,500",
+        "picture": "08.jpg"
+    },
+    {
+        "id": "09",
+        "name": "Winter",
+        "gender": "Female",
+        "age": "1.8yr",
+        "price": "5,000",
+        "picture": "09.jpg"
+    },
+    {
+        "id": "10",
+        "name": "KingKong",
+        "gender": "Male",
+        "age": "3.2yr",
+        "price": "15,000",
+        "picture": "10.jpg"
     }
 ]
