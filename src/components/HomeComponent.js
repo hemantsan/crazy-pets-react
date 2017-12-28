@@ -8,7 +8,7 @@ class HomeComponent extends Component {
             <div className="row">
                 <div className="col-md-12">
                     <h1>Home</h1>
-                    <h3>Popular Pets {this.props.ci}</h3>
+                    <h3>Popular Pets</h3>
                     <div className="row">
                         <PetsListComponent dataCount={4} />
                     </div>

@@ -5,7 +5,7 @@ class MainComponent extends Component {
     render() {
         return (
             <div role="main" className="container">
-                <HeaderComponent cartItems={2} wishlistItems={4} />
+                <HeaderComponent/>
                 <div className="row">
                     <div className="col-md-12">
                         {this.props.children}

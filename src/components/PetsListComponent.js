@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import petsData from '../api/pets.json';
 import PetComponent from './PetComponent';
 
+import { addToCart } from '../actions/cartActions';
+import { addToWishlist } from '../actions/wishlistActions';
+import { connect } from 'react-redux';
+
 class PetsListComponent extends Component {
 
     constructor(props) {
@@ -12,6 +16,10 @@ class PetsListComponent extends Component {
     }
 
     handleBuyClick(petId) {
+        alert("Pet id : " + petId);
+    }
+    
+    handleWishlistClick(petId) {
         alert("Pet id : " + petId);
     }
 
@@ -28,7 +36,8 @@ class PetsListComponent extends Component {
                         age={pet.age}
                         price={pet.price}
                         picture={pet.picture}
-                        handleBuyClick={this.handleBuyClick}
+                        handleBuyClick={this.props.addToCart}
+                        handleWishlistClick={this.props.addToWishlist}
                     />
                 );
             }
@@ -43,4 +52,22 @@ class PetsListComponent extends Component {
     }
 }
 
-export default PetsListComponent;
+const mapStateToProps = (state) => {
+    return {
+        cart: state.cartReducer,
+        wish: state.wishlistReducer,
+    };
+};
+
+const mapDispatchToProps = (dispath) => {
+    return {
+        addToCart: (petId) => {
+            dispath(addToCart(petId));
+        },
+        addToWishlist: (petId) => {
+            dispath(addToWishlist(petId));
+        }
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(PetsListComponent);

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
+
 
 class HeaderComponent extends Component {
     render() {
@@ -20,10 +22,10 @@ class HeaderComponent extends Component {
                             <NavLink className="nav-link" to={"/pets"}>Pets</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link" to="/cart">Cart <span className="badge badge-pill badge-primary">{this.props.cartItems}</span></NavLink>
+                            <NavLink className="nav-link" to="/cart">Cart <span className="badge badge-pill badge-primary">{this.props.cart.cartItemCount}</span></NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link" to={"/wishlist"}>Wishlist <span className="badge badge-pill badge-primary">{this.props.wishlistItems}</span></NavLink>
+                            <NavLink className="nav-link" to={"/wishlist"}>Wishlist <span className="badge badge-pill badge-primary">{this.props.wish.wishlistItemCount}</span></NavLink>
                         </li>
                     </ul>
                 </div>
@@ -32,4 +34,12 @@ class HeaderComponent extends Component {
     }
 }
 
-export default HeaderComponent;
+const mapStateToProps = (state) => {
+    return {
+        cart: state.cartReducer,
+        wish: state.wishlistReducer,
+    };
+};
+
+// export default HeaderComponent;
+export default connect(mapStateToProps)(HeaderComponent);

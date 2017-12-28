@@ -9,6 +9,9 @@ import CartComponent from './components/CartComponent';
 import WishlistComponent from './components/WishlistComponent';
 import BrowsePetsComponent from './components/BrowsePetsComponent';
 import registerServiceWorker from './registerServiceWorker';
+import { createStore, combineReducers, applyMiddleware } from "redux";
+import { Provider } from 'react-redux';
+import store from './store';
 
 import './css/site.css';
 
@@ -36,5 +39,12 @@ class App extends Component {
     }
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+store.subscribe(() => {
+    console.log("Store Updated : ", store.getState());
+});
+
+ReactDOM.render(
+    <Provider store={store}>
+        <App />
+    </Provider>, document.getElementById('root'));
 registerServiceWorker();
