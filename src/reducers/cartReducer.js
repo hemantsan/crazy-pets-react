@@ -11,6 +11,15 @@ const cartReducer = (state = {
             state.cartItemCount = state.petId.length;
             console.log([...state.petId].length);
             break;
+
+        case "REMOVE_FROM_CART":
+            state = {
+                ...state,
+                petId: action.payload,
+            };
+            state.cartItemCount = state.petId.length;
+            console.log("Cart item removed : ", [...state.petId].length);
+            break;
     }
     return state;
 };

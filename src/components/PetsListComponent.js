@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import petsData from '../api/pets.json';
 import PetComponent from './PetComponent';
 
 import { addToCart } from '../actions/cartActions';
 import { addToWishlist } from '../actions/wishlistActions';
+import { removeFromCart } from '../actions/cartActions';
 import { connect } from 'react-redux';
 
 class PetsListComponent extends Component {
@@ -11,7 +11,7 @@ class PetsListComponent extends Component {
     constructor(props) {
         super();
         this.state = {
-            petDataCount: (props.dataCount === "all" ? Object.keys(petsData).length : props.dataCount)
+            petDataCount: (props.dataCount === "all" ? Object.keys(props.petsData).length : props.dataCount)
         }
     }
 
@@ -25,7 +25,7 @@ class PetsListComponent extends Component {
 
     makeList() {
         var petListHtml = '';
-        petListHtml = petsData.map((pet, index) => {            
+        petListHtml = this.props.petsData.map((pet, index) => {            
             if (this.state.petDataCount > index) {
                 return(
                     <PetComponent 
@@ -38,6 +38,8 @@ class PetsListComponent extends Component {
                         picture={pet.picture}
                         handleBuyClick={this.props.addToCart}
                         handleWishlistClick={this.props.addToWishlist}
+                        handleRemoveClick={this.props.removeFromCart}
+                        listType={this.props.listType}
                     />
                 );
             }
@@ -66,6 +68,9 @@ const mapDispatchToProps = (dispath) => {
         },
         addToWishlist: (petId) => {
             dispath(addToWishlist(petId));
+        },
+        removeFromCart: (petData) => {
+            dispath(removeFromCart(petData))
         }
     }
 };

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PetsListComponent from './PetsListComponent';
 import { NavLink } from 'react-router-dom';
+import petsData from '../api/pets.json';
 
 class BrowsePetsComponent extends Component {
 
@@ -15,7 +16,7 @@ class BrowsePetsComponent extends Component {
                     <h1>Pets</h1>
                     <h3>Browse Pets</h3>
                     <div className="row">
-                        <PetsListComponent dataCount={"all"}/>
+                        <PetsListComponent dataCount={"all"} listType="common" petsData={petsData}/>
                     </div>
                 </div>
             </div>

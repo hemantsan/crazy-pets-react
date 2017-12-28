@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PetsListComponent from './PetsListComponent';
 import { NavLink } from 'react-router-dom';
+import petsData from '../api/pets.json';
 
 class HomeComponent extends Component {
     render() {
@@ -10,7 +11,7 @@ class HomeComponent extends Component {
                     <h1>Home</h1>
                     <h3>Popular Pets</h3>
                     <div className="row">
-                        <PetsListComponent dataCount={4} />
+                        <PetsListComponent dataCount={4} listType="common" petsData={petsData}/>
                     </div>
                     <div className="row">
                         <hr/>
