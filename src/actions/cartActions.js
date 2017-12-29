@@ -11,3 +11,10 @@ export function removeFromCart(petId) {
         payload: petId
     }
 }
+
+export function checkout(petArray) {
+    return {
+        type: "CHECKOUT",
+        payload: petArray
+    }
+}

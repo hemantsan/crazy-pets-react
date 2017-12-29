@@ -3,6 +3,7 @@ import PetsListComponent from './PetsListComponent';
 import { NavLink } from 'react-router-dom';
 import petsData from '../api/pets.json';
 import { connect } from 'react-redux';
+import { checkout } from '../actions/cartActions.js';
 
 class CartComponent extends Component {
 
@@ -25,7 +26,10 @@ class CartComponent extends Component {
         const isCartFilled = this.filterPetData();
         var CartItem = '';
         if(isCartFilled !== 0) {
-            CartItem = <PetsListComponent dataCount={"all"} listType="cart" petsData={isCartFilled}/>
+            CartItem = <div className="row"><PetsListComponent dataCount={"all"} listType="cart" petsData={isCartFilled}></PetsListComponent>
+                <div className="col-md-12">
+                    <button className="btn btn-warning btn-lg float-right" onClick={() => this.props.checkout('')}>Checkout</button>
+                </div></div>;
         }
         else{
             CartItem = <div className="col-md-12 text-center">
@@ -37,9 +41,9 @@ class CartComponent extends Component {
                 <div className="col-md-12">
                     <h1>Cart</h1>
                     <h3>Ready To Buy</h3>
-                    <div className="row">
+                    {/* <div className="row"> */}
                         {CartItem}
-                    </div>
+                    {/* </div> */}
                 </div>
             </div>
         );
@@ -52,4 +56,12 @@ const mapStateToProps = (state) => {
     };
 };
 
-export default connect(mapStateToProps)(CartComponent);
+const mapDispatchToProps = (dispath) => {
+    return {
+        checkout: (petArray) => {
+            dispath(checkout(petArray));
+        }
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CartComponent);

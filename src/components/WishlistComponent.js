@@ -25,7 +25,7 @@ class WishlistComponent extends Component {
         const isCartFilled = this.filterPetData();
         var wishlistItem = '';
         if(isCartFilled !== 0) {
-            wishlistItem = <PetsListComponent dataCount={"all"} listType="cart" petsData={isCartFilled}/>
+            wishlistItem = <PetsListComponent dataCount={"all"} listType="wish" petsData={isCartFilled}/>
         }
         else{
             wishlistItem = <div className="col-md-12 text-center">

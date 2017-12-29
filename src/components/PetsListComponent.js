@@ -4,6 +4,7 @@ import PetComponent from './PetComponent';
 import { addToCart } from '../actions/cartActions';
 import { addToWishlist } from '../actions/wishlistActions';
 import { removeFromCart } from '../actions/cartActions';
+import { removeFromWishlist } from '../actions/wishlistActions';
 import { connect } from 'react-redux';
 
 class PetsListComponent extends Component {
@@ -38,7 +39,7 @@ class PetsListComponent extends Component {
                         picture={pet.picture}
                         handleBuyClick={this.props.addToCart}
                         handleWishlistClick={this.props.addToWishlist}
-                        handleRemoveClick={this.props.removeFromCart}
+                        handleRemoveClick={this.props.remove}
                         listType={this.props.listType}
                     />
                 );
@@ -69,8 +70,13 @@ const mapDispatchToProps = (dispath) => {
         addToWishlist: (petId) => {
             dispath(addToWishlist(petId));
         },
-        removeFromCart: (petData) => {
-            dispath(removeFromCart(petData))
+        remove: (petData, listType) => {
+            if(listType === "cart") {
+                dispath(removeFromCart(petData));
+            }
+            else if(listType === "wish"){
+                dispath(removeFromWishlist(petData));
+            }
         }
     }
 };

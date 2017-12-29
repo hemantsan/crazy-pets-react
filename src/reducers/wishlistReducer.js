@@ -11,6 +11,15 @@ const cartReducer = (state = {
             state.wishlistItemCount = state.petId.length;
             console.log([...state.petId].length);
             break;
+
+        case "REMOVE_FROM_WISHLIST":
+            state = {
+                ...state,
+                petId: action.payload,
+            };
+            state.wishlistItemCount = state.petId.length;
+            console.log("Wishlist item removed : ", [...state.petId].length);
+            break;
     }
     return state;
 };

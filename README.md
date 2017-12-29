@@ -82,3 +82,23 @@ Now install below packages for better react, jsx, JS ES6 support
 8. Import `react-router-dom` in `index.js` 
     * `import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'`
 
+
+#### Implementing Redux patter
+For implementing redux pattern in react install below dependencies : 
+
+`npm install redux --save`
+`npm install react-redux --save`
+
+Then import below packages when using redux in a store
+
+`import { createStore, combineReducers, appplyMiddleware, applyMiddleware } from 'redux';`
+
+Now make 2 folders in src
+1. actions
+2. reducers
+
+Actions trigger the specific reducer to do a task. Like ADD_NUMBERS action would trigger the same action in reducer and reducer would set the recieved value in state.
+
+Reducers are combination of switch cases that recieve a value in each action and set it to state and update state.
+
+

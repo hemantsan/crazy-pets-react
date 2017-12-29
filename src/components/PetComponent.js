@@ -30,12 +30,14 @@ class PetComponent extends Component {
 
     onRemoveClick() {
         const selectedPet = this.props.id;
-        var petIndex = this.props.cart.petId.filter((pet, index) => {
+        var listType = this.props.listType;
+        var selectedPetData = (this.props.listType === "cart" ? this.props.cart.petId : this.props.wish.petId);
+        var petIndex = selectedPetData.filter((pet, index) => {
             return pet !== selectedPet;
         });
         // var modifiedPetData =  this.props.cart.petId.filter(return petIndex 1);
         console.log('----->>>', petIndex);
-        this.props.handleRemoveClick(petIndex);
+        this.props.handleRemoveClick(petIndex, listType);
     }
 
     render() {

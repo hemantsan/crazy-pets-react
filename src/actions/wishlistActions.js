@@ -4,3 +4,10 @@ export function addToWishlist(petId) {
         payload: petId
     };
 }
+
+export function removeFromWishlist(petId) {
+    return {
+        type: "REMOVE_FROM_WISHLIST",
+        payload: petId
+    }
+}
