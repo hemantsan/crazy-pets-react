@@ -41,9 +41,7 @@ class CartComponent extends Component {
                 <div className="col-md-12">
                     <h1>Cart</h1>
                     <h3>Ready To Buy</h3>
-                    {/* <div className="row"> */}
-                        {CartItem}
-                    {/* </div> */}
+                    {CartItem}
                 </div>
             </div>
         );

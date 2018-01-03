@@ -83,15 +83,20 @@ Now install below packages for better react, jsx, JS ES6 support
     * `import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'`
 
 
-#### Implementing Redux patter
+#### Implementing Redux pattern
 For implementing redux pattern in react install below dependencies : 
 
 `npm install redux --save`
 `npm install react-redux --save`
 
 Then import below packages when using redux in a store
+`import { createStore, combineReducers, appplyMiddleware } from 'redux';`
 
-`import { createStore, combineReducers, appplyMiddleware, applyMiddleware } from 'redux';`
+Import below package when connecting component with redux.
+`import { connect } from 'react-redux';`
+
+In index.js or entry point js import below package
+`import { Provider } from 'react-redux';`
 
 Now make 2 folders in src
 1. actions
@@ -99,6 +104,11 @@ Now make 2 folders in src
 
 Actions trigger the specific reducer to do a task. Like ADD_NUMBERS action would trigger the same action in reducer and reducer would set the recieved value in state.
 
-Reducers are combination of switch cases that recieve a value in each action and set it to state and update state.
+Reducers are combination of switch cases which recieve a value in each action and set it to state and update state.
+
+- mapStateToProps : mapping states to props in component
+- mapDispatchToProps : mapping dispatch/functions to props in component. Firing specific function/action on event call. Like providing `ADD_NUMBERS` action as props in component. And firing this action will trigger a switch case in reducer.
+
+All the logic related code should be remained in component, only final value should be sent in reducer for updating state.
 
 
